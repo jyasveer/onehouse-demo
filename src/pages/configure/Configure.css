@@ -1,0 +1,14 @@
+.configure-container {
+    display: flex;
+    padding: 10px;
+}
+
+.left-section {
+    flex: 1;
+}
+
+.right-section {
+    flex: 1;
+    margin-left: 10px;
+}
+

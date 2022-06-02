@@ -1,0 +1,16 @@
+.parent-field-container {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.parent-field-container .parent-field-name {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.parent-field-container .child-fields-header {
+    padding-left: 30px;
+    font-weight: bold;
+}
