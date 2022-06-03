@@ -6,16 +6,20 @@ import "./Configure.css";
 import { FieldRecursive } from "../../components";
 
 const Configure = () => {
-  const { rawData } = useAppState();
+  const {
+    rawData,
+    maskedColumnList,
+    encryptedColumnList
+  } = useAppState();
+
   const navigate = useNavigate();
 
-  console.log("raw data", rawData);
+  console.log("app state", rawData, maskedColumnList, encryptedColumnList);
 
   const renderFormToConfigure = () => {
     const formToConfigure = rawData.map((fileData) => (
       <FieldRecursive data={[fileData]} key={fileData?.name} />
     ));
-    console.log('rawData', rawData);
     return formToConfigure;
   };
 
@@ -28,13 +32,25 @@ const Configure = () => {
       <div className="left-section">
         <h2>2. Configure data masking and encryption</h2>
         <h5>Select columns to mask or encrypt</h5>
-        <div>{renderFormToConfigure()}</div>
+        <div className="left-content-section">{renderFormToConfigure()}</div>
         <Button variant="outlined" onClick={goBack}>
           Go Back
         </Button>
       </div>
       <div className="right-section">
         <h2>Output</h2>
+        <h5>You have selected below columns for Encryption</h5>
+        {encryptedColumnList.map((columnName, index) => (
+          <div key={'encryption' + index}>
+            {index + 1}. {columnName}
+          </div>
+        ))}
+        <h5>You have selected below columns for Masking</h5>
+        {maskedColumnList.map((columnName, index) => (
+          <div key={'masking' + index}>
+            {index + 1}. {columnName}
+          </div>
+        ))}
       </div>
     </div>
   );

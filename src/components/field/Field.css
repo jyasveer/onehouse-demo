@@ -1,13 +1,11 @@
 .field {
-    padding-left: 20px;
     display: flex;
-    align-items: center;
 }
 
 .field span {
-    margin-left: 5px;
+    flex: 1;
 }
 
 .field input {
-    margin-left: 10px;
+    flex: 1
 }

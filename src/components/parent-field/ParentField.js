@@ -19,11 +19,13 @@ const ParentField = ({ name, children }) => {
           {isOpen ? <Icon>arrow_drop_down</Icon> : <Icon>arrow_right</Icon>}
           <span>{name}</span>
         </div>
-        <div className="child-fields-header">
-          <span>Columns</span>
-          <span>Mask</span>
-          <span>Encrypt</span>
-        </div>
+        {isOpen ? (
+          <div className="child-fields-header">
+            <span>Columns</span>
+            <span>Mask</span>
+            <span>Encrypt</span>
+          </div>
+        ) : null}
       </div>
       <Collapsible isOpen={isOpen}>{children}</Collapsible>
     </>

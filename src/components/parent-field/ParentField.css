@@ -1,5 +1,4 @@
 .parent-field-container {
-    padding-left: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -7,10 +6,18 @@
 .parent-field-container .parent-field-name {
     display: flex;
     align-items: center;
-    margin-left: 5px;
+    margin-left: -23px;
 }
 
 .parent-field-container .child-fields-header {
-    padding-left: 30px;
+    display: flex;
+    padding: 0 0 0 30px;
     font-weight: bold;
+    width: 300px;
+}
+
+.parent-field-container .child-fields-header span {
+    flex: 1;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
 }

@@ -6,7 +6,8 @@ import { useAppState } from "../../state/AppState";
 import { readFileAsText } from "../../common/utils";
 
 const UploadFile = () => {
-  const { updateRawData } = useAppState();
+  const { updateRawData, resetMaskedColumnList, resetEncryptedColumnList } =
+    useAppState();
   const navigate = useNavigate();
 
   const fileChangeHandler = (event) => {
@@ -28,6 +29,8 @@ const UploadFile = () => {
         const parsedFileDataList = [];
         resultArray.forEach((result) => parsedFileDataList.push(result));
         updateRawData(parsedFileDataList);
+        resetMaskedColumnList();
+        resetEncryptedColumnList();
         navigate("/configure");
       })
       .catch((error) => console.log("file read error", error));
